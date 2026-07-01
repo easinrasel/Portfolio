@@ -3,459 +3,715 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Md. Easin Siddik — Portfolio</title>
+<title>Yeasin Siddik — Procurement & Supply Chain Professional | D365 SCM Consultant</title>
+<meta name="description" content="Yeasin Siddik — Procurement Professional, Microsoft D365 SCM Functional Consultant, and founder of LittleGrow Parenting. Portfolio, case studies, resources & resume.">
+<meta name="keywords" content="Yeasin Siddik, Procurement Bangladesh, D365 SCM Consultant, Supply Chain Professional, Power BI Procurement, Tender Specialist">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#1B2A41;
-    --paper:#FAF9F5;
-    --paper-dim:#F1EEE6;
-    --amber:#C1793E;
-    --sage:#748C7C;
-    --charcoal:#22262B;
-    --slate:#6B7280;
-    --line:#DBD3C4;
-    --white:#FFFFFF;
-    --display: 'Fraunces', serif;
-    --body: 'IBM Plex Sans', sans-serif;
+    --bg:#FFFFFF;
+    --bg-alt:#F7F9FC;
+    --card:#FFFFFF;
+    --primary:#2563EB;
+    --primary-dark:#1D4ED8;
+    --text:#111827;
+    --secondary:#64748B;
+    --accent:#14B8A6;
+    --line:#E5E9F0;
+    --font: 'Inter', sans-serif;
     --mono: 'IBM Plex Mono', monospace;
     --bn: 'Noto Sans Bengali', sans-serif;
+    --shadow: 0 1px 3px rgba(17,24,39,0.06), 0 8px 24px rgba(17,24,39,0.04);
+  }
+  [data-theme="dark"]{
+    --bg:#0B1220;
+    --bg-alt:#0F1829;
+    --card:#131D31;
+    --primary:#5B8DEF;
+    --primary-dark:#3B6FE0;
+    --text:#F1F5F9;
+    --secondary:#94A3B8;
+    --accent:#2DD4BF;
+    --line:#1E293B;
+    --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.25);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
   body{
-    background:var(--paper);
-    color:var(--charcoal);
-    font-family:var(--body);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
+    background:var(--bg); color:var(--text); font-family:var(--font);
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+    transition:background .3s ease, color .3s ease;
   }
-  ::selection{background:var(--amber); color:var(--white);}
-
-  a{color:inherit;}
-
+  ::selection{background:var(--primary); color:#fff;}
+  a{color:inherit; text-decoration:none;}
   .bn{font-family:var(--bn);}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
+  img{max-width:100%; display:block;}
 
-  /* ---------- Layout shell ---------- */
-  .wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
-
-  /* ---------- Top ref bar ---------- */
-  .topbar{
-    position:fixed; top:0; left:0; right:0; z-index:50;
-    display:flex; justify-content:space-between; align-items:center;
-    padding:18px 32px;
-    font-family:var(--mono);
-    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
-    color:var(--ink);
-    background:rgba(250,249,245,0.86);
-    backdrop-filter: blur(6px);
+  /* ---------- Nav ---------- */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(255,255,255,0.85); backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
+    transition:background .3s ease, border-color .3s ease;
   }
-  .topbar .ref{color:var(--slate);}
-  .topbar nav{display:flex; gap:22px;}
-  .topbar nav a{text-decoration:none; color:var(--slate); transition:color .2s;}
-  .topbar nav a:hover, .topbar nav a.active{color:var(--amber);}
-  @media (max-width:720px){ .topbar nav{display:none;} }
+  [data-theme="dark"] .nav{background:rgba(11,18,32,0.85);}
+  .nav-inner{
+    max-width:1120px; margin:0 auto; padding:16px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{font-weight:800; font-size:18px; letter-spacing:-0.01em;}
+  .brand span{color:var(--primary);}
+  .nav-links{display:flex; gap:26px; align-items:center;}
+  .nav-links a{font-size:14.5px; font-weight:500; color:var(--secondary); transition:color .2s;}
+  .nav-links a:hover, .nav-links a.active{color:var(--primary);}
+  .nav-actions{display:flex; align-items:center; gap:14px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:10px 20px; border-radius:8px; font-weight:600; font-size:14px;
+    border:1px solid transparent; cursor:pointer; transition:all .2s ease;
+  }
+  .btn-primary{background:var(--primary); color:#fff;}
+  .btn-primary:hover{background:var(--primary-dark); transform:translateY(-1px);}
+  .btn-ghost{border-color:var(--line); color:var(--text); background:transparent;}
+  .btn-ghost:hover{border-color:var(--primary); color:var(--primary);}
+  .theme-toggle{
+    width:38px; height:38px; border-radius:50%; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    background:var(--bg-alt); font-size:16px; flex:none;
+  }
+  .mobile-menu-btn{display:none; background:none; border:none; font-size:22px; color:var(--text); cursor:pointer;}
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .mobile-menu-btn{display:block;}
+  }
 
   /* ---------- Hero ---------- */
   .hero{
-    min-height:100vh;
-    display:flex; flex-direction:column; justify-content:center;
-    padding:120px 32px 80px;
-    position:relative;
+    min-height:92vh; display:flex; align-items:center; position:relative;
+    padding:140px 32px 80px; overflow:hidden;
   }
-  .hero-inner{max-width:1080px; margin:0 auto; width:100%;}
-  .hero .kicker{
-    font-family:var(--mono); font-size:12px; letter-spacing:0.12em;
-    text-transform:uppercase; color:var(--amber); margin-bottom:22px;
-    display:flex; align-items:center; gap:10px;
+  .hero::before{
+    content:''; position:absolute; top:-20%; right:-10%; width:600px; height:600px;
+    background:radial-gradient(circle, rgba(37,99,235,0.10), transparent 70%);
+    border-radius:50%; animation:float 9s ease-in-out infinite;
   }
-  .hero .kicker::before{content:''; width:26px; height:1px; background:var(--amber);}
-  h1.name{
-    font-family:var(--display);
-    font-weight:500;
-    font-size:clamp(48px, 8vw, 96px);
-    line-height:0.98;
-    color:var(--ink);
-    letter-spacing:-0.01em;
+  .hero::after{
+    content:''; position:absolute; bottom:-15%; left:-10%; width:400px; height:400px;
+    background:radial-gradient(circle, rgba(20,184,166,0.08), transparent 70%);
+    border-radius:50%; animation:float 11s ease-in-out infinite reverse;
   }
-  .hero .roles{
-    margin-top:26px;
-    font-family:var(--display);
-    font-style:italic;
-    font-weight:400;
-    font-size:clamp(18px, 2.6vw, 26px);
-    color:var(--sage);
+  @keyframes float{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(30px);} }
+  @media (prefers-reduced-motion: reduce){ .hero::before, .hero::after{animation:none;} }
+  .hero-inner{max-width:1120px; margin:0 auto; width:100%; position:relative; z-index:1;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px; font-family:var(--mono);
+    font-size:12.5px; font-weight:500; color:var(--primary); background:rgba(37,99,235,0.08);
+    padding:7px 14px; border-radius:20px; margin-bottom:26px;
+  }
+  h1.hero-name{
+    font-size:clamp(40px,7vw,72px); font-weight:800; letter-spacing:-0.02em; line-height:1.05;
+  }
+  .hero-role{
+    margin-top:18px; font-size:clamp(17px,2.2vw,22px); color:var(--secondary); font-weight:500;
     max-width:640px;
   }
-  .hero .lede{
-    margin-top:30px;
-    font-size:17px;
-    color:var(--slate);
-    max-width:560px;
-    line-height:1.75;
-  }
-  .hero .scroll-cue{
-    margin-top:64px;
-    font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
-    color:var(--slate); display:flex; align-items:center; gap:10px;
-  }
-  .hero .scroll-cue span.line{width:1px; height:30px; background:var(--line); display:inline-block; position:relative; overflow:hidden;}
-  .hero .scroll-cue span.line::after{
-    content:''; position:absolute; top:-100%; left:0; width:100%; height:100%;
-    background:var(--amber); animation:drip 2.2s ease-in-out infinite;
-  }
-  @keyframes drip{ 0%{top:-100%;} 60%{top:100%;} 100%{top:100%;} }
-  @media (prefers-reduced-motion: reduce){ .scroll-cue span.line::after{animation:none;} }
+  .hero-desc{margin-top:20px; font-size:16px; color:var(--secondary); max-width:560px;}
+  .hero-cta{display:flex; gap:14px; margin-top:36px; flex-wrap:wrap;}
+  .hero-stats{display:flex; gap:44px; margin-top:64px; flex-wrap:wrap;}
+  .hero-stat .n{font-size:28px; font-weight:800; color:var(--text);}
+  .hero-stat .l{font-size:13px; color:var(--secondary); margin-top:4px;}
 
-  /* ---------- Section scaffolding (dossier clauses) ---------- */
-  section.clause{
-    padding:110px 32px;
-    border-top:1px solid var(--line);
-    position:relative;
-  }
-  section.clause.alt{background:var(--paper-dim);}
-  .clause-head{
-    display:flex; gap:24px; align-items:baseline; margin-bottom:56px;
-    max-width:1080px; margin-left:auto; margin-right:auto;
-  }
-  .clause-num{
-    font-family:var(--mono); font-size:13px; color:var(--amber);
-    letter-spacing:0.05em; white-space:nowrap; padding-top:6px;
-  }
-  .clause-title{
-    font-family:var(--display); font-weight:500;
-    font-size:clamp(28px, 4vw, 40px); color:var(--ink); letter-spacing:-0.01em;
-  }
-  .clause-sub{
-    font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
-    color:var(--slate); margin-top:8px;
-  }
-  .clause-body{max-width:1080px; margin:0 auto;}
+  /* ---------- Section shell ---------- */
+  section{padding:96px 32px; border-top:1px solid var(--line);}
+  section.alt{background:var(--bg-alt);}
+  .sec-head{max-width:1120px; margin:0 auto 48px;}
+  .sec-eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); font-weight:600;}
+  .sec-title{font-size:clamp(28px,4vw,38px); font-weight:800; letter-spacing:-0.01em; margin-top:10px;}
+  .sec-sub{color:var(--secondary); font-size:15.5px; margin-top:10px; max-width:600px;}
+  .sec-body{max-width:1120px; margin:0 auto;}
 
   /* ---------- About ---------- */
-  .about-grid{
-    display:grid; grid-template-columns: 1fr 1.4fr; gap:64px;
-  }
+  .about-grid{display:grid; grid-template-columns:280px 1fr; gap:56px; align-items:start;}
   @media (max-width:800px){ .about-grid{grid-template-columns:1fr;} }
-  .about-mark{
-    font-family:var(--display); font-size:180px; line-height:0.8; color:var(--line);
-    font-weight:500; user-select:none;
+  .avatar{
+    width:100%; aspect-ratio:1; border-radius:20px; background:linear-gradient(135deg, var(--primary), var(--accent));
+    display:flex; align-items:center; justify-content:center; color:#fff; font-size:64px; font-weight:800;
+    box-shadow:var(--shadow);
   }
-  .about-text p{font-size:17px; color:var(--charcoal); margin-bottom:20px; max-width:560px;}
-  .about-text p strong{color:var(--ink); font-weight:500;}
-  .credentials{margin-top:36px; display:flex; flex-direction:column; gap:14px;}
-  .credential{
-    display:flex; gap:16px; padding-bottom:14px; border-bottom:1px solid var(--line);
-    font-size:14px;
+  .about-facts{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+  .fact-pill{
+    font-size:12.5px; font-weight:500; padding:7px 13px; border-radius:16px;
+    background:var(--bg-alt); border:1px solid var(--line); color:var(--secondary);
   }
-  .credential .yr{font-family:var(--mono); color:var(--amber); min-width:70px;}
-  .credential .what strong{display:block; color:var(--ink); font-weight:500; font-size:15px;}
-  .credential .what span{color:var(--slate); font-size:13px;}
+  [data-theme="dark"] .fact-pill{background:var(--card);}
+  .about-text p{color:var(--secondary); font-size:16px; margin-bottom:16px; max-width:640px;}
+  .about-text strong{color:var(--text); font-weight:600;}
 
-  /* ---------- Track record stats ---------- */
-  .stat-grid{
-    display:grid; grid-template-columns:repeat(4, 1fr); gap:1px;
-    background:var(--line); border:1px solid var(--line); margin-bottom:56px;
+  .skill-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:40px;}
+  @media (max-width:800px){ .skill-grid{grid-template-columns:repeat(2,1fr);} }
+  .skill-card{
+    background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px;
+    box-shadow:var(--shadow); text-align:center; font-weight:600; font-size:14px;
+    transition:transform .2s ease, border-color .2s ease;
   }
-  @media (max-width:800px){ .stat-grid{grid-template-columns:repeat(2,1fr);} }
-  .stat{background:var(--paper); padding:28px 22px;}
-  section.clause.alt .stat{background:var(--paper-dim);}
-  .stat .num{font-family:var(--display); font-size:34px; color:var(--ink); font-weight:500;}
-  .stat .lbl{font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:0.06em; color:var(--slate); margin-top:8px; line-height:1.5;}
+  .skill-card:hover{transform:translateY(-3px); border-color:var(--primary);}
 
-  .role-block{display:grid; grid-template-columns:220px 1fr; gap:40px; margin-bottom:44px;}
-  @media (max-width:720px){ .role-block{grid-template-columns:1fr;} }
-  .role-meta .org{font-family:var(--display); font-style:italic; font-size:19px; color:var(--ink);}
-  .role-meta .dur{font-family:var(--mono); font-size:11.5px; color:var(--slate); margin-top:6px;}
-  .role-detail p{font-size:15.5px; color:var(--charcoal); margin-bottom:14px;}
-  .role-detail ul{margin:0 0 6px 18px; padding:0;}
-  .role-detail li{font-size:15px; color:var(--charcoal); margin-bottom:8px;}
-  .tag-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
-  .tag{
-    font-family:var(--mono); font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase;
-    border:1px solid var(--line); color:var(--slate); padding:5px 10px; border-radius:2px;
-  }
-
-  /* ---------- Academic timeline ---------- */
-  .timeline{position:relative; padding-left:32px;}
-  .timeline::before{content:''; position:absolute; left:5px; top:6px; bottom:6px; width:1px; background:var(--line);}
+  /* ---------- Experience timeline ---------- */
+  .timeline{position:relative; padding-left:36px; max-width:800px;}
+  .timeline::before{content:''; position:absolute; left:6px; top:8px; bottom:8px; width:2px; background:var(--line);}
   .tl-item{position:relative; padding-bottom:44px;}
   .tl-item:last-child{padding-bottom:0;}
   .tl-item::before{
-    content:''; position:absolute; left:-32px; top:5px; width:11px; height:11px;
-    border-radius:50%; background:var(--paper); border:2px solid var(--amber);
+    content:''; position:absolute; left:-36px; top:4px; width:14px; height:14px; border-radius:50%;
+    background:var(--primary); border:3px solid var(--bg);
+    box-shadow:0 0 0 2px var(--primary);
   }
-  .tl-item.future::before{background:var(--paper); border-color:var(--sage); border-style:dashed;}
-  .tl-item .tl-yr{font-family:var(--mono); font-size:11.5px; color:var(--amber); letter-spacing:0.05em;}
-  .tl-item.future .tl-yr{color:var(--sage);}
-  .tl-item .tl-title{font-family:var(--display); font-size:21px; color:var(--ink); margin:6px 0 8px; font-weight:500;}
-  .tl-item .tl-desc{font-size:15px; color:var(--slate); max-width:600px;}
+  .tl-yr{font-family:var(--mono); font-size:12.5px; color:var(--primary); font-weight:600;}
+  .tl-title{font-size:19px; font-weight:700; margin:6px 0 6px;}
+  .tl-org{font-size:14px; color:var(--secondary); font-weight:500; margin-bottom:10px;}
+  .tl-desc{font-size:14.5px; color:var(--secondary); max-width:600px;}
+
+  /* ---------- Projects ---------- */
+  .project-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
+  @media (max-width:800px){ .project-grid{grid-template-columns:1fr;} }
+  .project-card{
+    background:var(--card); border:1px solid var(--line); border-radius:16px; padding:30px;
+    box-shadow:var(--shadow);
+  }
+  .project-card h4{font-size:19px; font-weight:700; margin-bottom:18px;}
+  .flow{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:14px;}
+  .flow-step{
+    font-size:12.5px; font-weight:600; padding:6px 12px; border-radius:8px;
+    background:var(--bg-alt); color:var(--secondary);
+  }
+  [data-theme="dark"] .flow-step{background:#1A2438;}
+  .flow-step.result{background:rgba(20,184,166,0.12); color:var(--accent);}
+  .flow-arrow{color:var(--line); font-size:14px;}
+  .project-card p.pdesc{font-size:14px; color:var(--secondary);}
+
+  /* ---------- Case studies ---------- */
+  .case-study{
+    background:var(--card); border:1px solid var(--line); border-radius:16px; padding:40px;
+    box-shadow:var(--shadow); margin-bottom:24px;
+  }
+  .case-study h4{font-size:22px; font-weight:700; margin-bottom:6px;}
+  .case-tag{font-family:var(--mono); font-size:11.5px; color:var(--primary); text-transform:uppercase; letter-spacing:0.05em; font-weight:600;}
+  .case-cols{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:24px;}
+  @media (max-width:760px){ .case-cols{grid-template-columns:1fr;} }
+  .case-col .cc-label{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--secondary); margin-bottom:8px;}
+  .case-col p{font-size:14.5px; color:var(--text);}
 
   /* ---------- LittleGrow ---------- */
-  .venture-panel{
-    background:var(--ink); color:var(--paper);
-    padding:56px; border-radius:2px;
-    display:grid; grid-template-columns:1.3fr 1fr; gap:48px; align-items:center;
+  .venture-card{
+    background:linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius:20px; padding:52px; color:#fff;
+    display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:center;
   }
-  @media (max-width:800px){ .venture-panel{grid-template-columns:1fr; padding:36px;} }
-  .venture-panel .v-kicker{font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--amber);}
-  .venture-panel h3{font-family:var(--display); font-size:clamp(26px,3.4vw,36px); font-weight:500; margin:14px 0 18px; color:var(--white);}
-  .venture-panel p{color:#C9CDD6; font-size:15.5px; margin-bottom:14px; max-width:480px;}
-  .venture-cta{
-    display:inline-flex; align-items:center; gap:10px; margin-top:14px;
-    font-family:var(--mono); font-size:12px; letter-spacing:0.05em; text-transform:uppercase;
-    color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber); padding-bottom:4px;
+  @media (max-width:800px){ .venture-card{grid-template-columns:1fr; padding:32px;} }
+  .venture-card .v-kicker{font-family:var(--mono); font-size:11.5px; letter-spacing:0.08em; text-transform:uppercase; opacity:0.85;}
+  .venture-card h3{font-size:clamp(24px,3.2vw,32px); font-weight:800; margin:14px 0 16px;}
+  .venture-card p{opacity:0.92; font-size:15px; margin-bottom:14px; max-width:480px;}
+  .venture-btn{
+    display:inline-flex; margin-top:14px; background:#fff; color:var(--primary-dark);
+    padding:11px 22px; border-radius:8px; font-weight:700; font-size:14px;
   }
-  .venture-side{border-left:1px solid rgba(255,255,255,0.15); padding-left:40px;}
-  @media (max-width:800px){ .venture-side{border-left:none; padding-left:0; border-top:1px solid rgba(255,255,255,0.15); padding-top:28px;} }
-  .venture-side .v-stage{font-family:var(--mono); font-size:11px; color:#8A93A6; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;}
-  .venture-stage-list{display:flex; flex-direction:column; gap:16px; margin-top:16px;}
-  .v-stage-item{display:flex; gap:12px; align-items:baseline;}
-  .v-stage-item .dot{width:6px; height:6px; border-radius:50%; background:var(--sage); margin-top:2px; flex:none;}
-  .v-stage-item.pending .dot{background:transparent; border:1px solid #5A6274;}
-  .v-stage-item div{font-size:14px; color:#C9CDD6;}
-  .v-stage-item strong{display:block; color:var(--white); font-weight:500; font-size:14.5px;}
+  .v-list{display:flex; flex-direction:column; gap:14px;}
+  .v-list-item{display:flex; gap:12px; align-items:flex-start; font-size:14px;}
+  .v-list-item .chk{width:20px; height:20px; border-radius:50%; background:rgba(255,255,255,0.2); flex:none; display:flex; align-items:center; justify-content:center; font-size:11px;}
 
-  /* ---------- Writing ---------- */
-  .book-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
-  @media (max-width:800px){ .book-grid{grid-template-columns:1fr;} }
-  .book-card{
-    border:1px solid var(--line); padding:36px; background:var(--paper);
-    display:flex; flex-direction:column; height:100%;
+  /* ---------- Articles ---------- */
+  .article-filters{display:flex; gap:10px; margin-bottom:30px; flex-wrap:wrap;}
+  .filter-pill{font-size:13px; font-weight:600; padding:8px 16px; border-radius:20px; border:1px solid var(--line); color:var(--secondary);}
+  .filter-pill.active{background:var(--primary); color:#fff; border-color:var(--primary);}
+  .article-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:900px){ .article-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:620px){ .article-grid{grid-template-columns:1fr;} }
+  .article-card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px;
+    box-shadow:var(--shadow);
   }
-  section.clause.alt .book-card{background:var(--white);}
-  .book-card .b-tag{font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:0.08em; color:var(--amber);}
-  .book-card h4{font-family:var(--bn); font-size:24px; color:var(--ink); margin:14px 0 6px; font-weight:500; line-height:1.4;}
-  .book-card .b-en{font-family:var(--display); font-style:italic; color:var(--slate); font-size:14.5px; margin-bottom:16px;}
-  .book-card p{font-size:14.5px; color:var(--charcoal); flex:1;}
-  .book-card .b-chars{margin-top:18px; font-family:var(--mono); font-size:11px; color:var(--slate); text-transform:uppercase; letter-spacing:0.04em;}
+  .article-cat{font-family:var(--mono); font-size:11px; text-transform:uppercase; color:var(--accent); font-weight:600; letter-spacing:0.05em;}
+  .article-card h5{font-size:16.5px; font-weight:700; margin:10px 0 8px; line-height:1.4;}
+  .article-card p{font-size:13.5px; color:var(--secondary);}
 
-  /* ---------- Footer / contact ---------- */
-  footer{padding:100px 32px 60px; border-top:1px solid var(--line);}
-  .footer-inner{max-width:1080px; margin:0 auto;}
-  .footer-top{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:32px; margin-bottom:60px;}
-  .footer-top h2{font-family:var(--display); font-size:clamp(32px,5vw,52px); font-weight:500; color:var(--ink); max-width:520px; line-height:1.1;}
-  .contact-list{display:flex; flex-direction:column; gap:10px; font-family:var(--mono); font-size:14px;}
-  .contact-list a{text-decoration:none; color:var(--ink); border-bottom:1px solid transparent; transition:border-color .2s;}
-  .contact-list a:hover{border-color:var(--amber); color:var(--amber);}
-  .footer-bottom{
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
-    padding-top:24px; border-top:1px solid var(--line);
-    font-family:var(--mono); font-size:11px; color:var(--slate); letter-spacing:0.04em; text-transform:uppercase;
+  /* ---------- Resources / Knowledge Hub ---------- */
+  .resource-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media (max-width:800px){ .resource-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .resource-grid{grid-template-columns:1fr;} }
+  .resource-card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px;
+    display:flex; flex-direction:column; gap:10px; box-shadow:var(--shadow);
   }
+  .resource-icon{
+    width:40px; height:40px; border-radius:10px; background:rgba(37,99,235,0.1); color:var(--primary);
+    display:flex; align-items:center; justify-content:center; font-size:18px;
+  }
+  .resource-card h5{font-size:15px; font-weight:700;}
+  .resource-card p{font-size:13px; color:var(--secondary); flex:1;}
+  .resource-dl{font-size:13px; font-weight:600; color:var(--primary); display:inline-flex; align-items:center; gap:6px;}
 
-  .fade-in{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  /* ---------- Resume ---------- */
+  .resume-panel{
+    background:var(--card); border:1px solid var(--line); border-radius:20px; padding:56px;
+    display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;
+    box-shadow:var(--shadow);
+  }
+  .resume-panel h3{font-size:26px; font-weight:800; margin-bottom:10px;}
+  .resume-panel p{color:var(--secondary); font-size:15px; max-width:460px;}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  @media (max-width:760px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact-card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px;
+    display:flex; align-items:center; gap:16px; box-shadow:var(--shadow);
+  }
+  .contact-card .ci{
+    width:44px; height:44px; border-radius:10px; background:rgba(37,99,235,0.1); color:var(--primary);
+    display:flex; align-items:center; justify-content:center; font-size:18px; flex:none;
+  }
+  .contact-card .cl{font-size:12px; color:var(--secondary); text-transform:uppercase; letter-spacing:0.04em;}
+  .contact-card .cv{font-size:15px; font-weight:600; margin-top:2px;}
+
+  footer{padding:40px 32px; text-align:center; font-size:13px; color:var(--secondary);}
+  footer strong{color:var(--text);}
+
+  .fade-in{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
   .fade-in.visible{opacity:1; transform:none;}
   @media (prefers-reduced-motion: reduce){ .fade-in{opacity:1; transform:none; transition:none;} }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="ref">REF: ES / 2026 / PORTFOLIO</div>
-  <nav>
-    <a href="#about" data-nav>About</a>
-    <a href="#track-record" data-nav>Track Record</a>
-    <a href="#academic" data-nav>Academic Path</a>
-    <a href="#littlegrow" data-nav>LittleGrow</a>
-    <a href="#writing" data-nav>Writing</a>
-    <a href="#contact" data-nav>Contact</a>
-  </nav>
-</div>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">Yeasin <span>Siddik</span></div>
+    <div class="nav-links">
+      <a href="#home" data-nav>Home</a>
+      <a href="#about" data-nav>About</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#projects" data-nav>Projects</a>
+      <a href="#case-studies" data-nav>Case Studies</a>
+      <a href="#littlegrow" data-nav>LittleGrow</a>
+      <a href="#articles" data-nav>Articles</a>
+      <a href="#resources" data-nav>Resources</a>
+      <a href="#contact" data-nav>Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <a href="#resume" class="btn btn-primary">Resume</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
 
-<header class="hero">
+<header class="hero" id="home">
   <div class="hero-inner">
-    <div class="kicker">Portfolio · Dhaka, Bangladesh</div>
-    <h1 class="name">Md. Easin<br>Siddik</h1>
-    <p class="roles">Supply chain &amp; procurement professional — building a future at the intersection of institutional rigor and early childhood development.</p>
-    <p class="lede">Ten-plus years managing complex, multi-donor procurement portfolios in public health. Now training as a child development researcher and building LittleGrow Parenting, a Bengali-language brand for early learning.</p>
-    <div class="scroll-cue"><span class="line"></span> Scroll to review</div>
+    <div class="eyebrow">● Available for consulting &amp; procurement advisory</div>
+    <h1 class="hero-name">Yeasin Siddik</h1>
+    <p class="hero-role">Procurement Professional · Microsoft D365 SCM Functional Consultant</p>
+    <p class="hero-desc">Helping organizations build efficient, compliant procurement processes — and, outside work hours, building LittleGrow Parenting, a Bengali-language brand for early childhood toys and books.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Portfolio</a>
+      <a href="#resume" class="btn btn-ghost">Download Resume</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="n">10+ yrs</div><div class="l">Total experience</div></div>
+      <div class="hero-stat"><div class="n">$2M</div><div class="l">Annual portfolio managed</div></div>
+      <div class="hero-stat"><div class="n">150+</div><div class="l">Active contracts</div></div>
+      <div class="hero-stat"><div class="n">$160K+</div><div class="l">Documented savings</div></div>
+    </div>
   </div>
 </header>
 
-<section class="clause" id="about">
-  <div class="clause-head">
-    <div class="clause-num">ART. I</div>
-    <div>
-      <div class="clause-title">About</div>
-      <div class="clause-sub">Two disciplines, one throughline</div>
-    </div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-head fade-in">
+    <div class="sec-eyebrow">About</div>
+    <div class="sec-title">A decade in procurement, a new chapter in ECD</div>
+    <p class="sec-sub">Institutional supply chain expertise, applied now to a personal mission in early childhood development.</p>
   </div>
-  <div class="clause-body">
+  <div class="sec-body">
     <div class="about-grid">
-      <div class="fade-in"><div class="about-mark">ES</div></div>
+      <div class="fade-in">
+        <div class="avatar">ER</div>
+        <div class="about-facts">
+          <span class="fact-pill">8+ Years Experience</span>
+          <span class="fact-pill">Procurement</span>
+          <span class="fact-pill">Tender</span>
+          <span class="fact-pill">Contract</span>
+          <span class="fact-pill">Vendor Management</span>
+          <span class="fact-pill">Dynamics 365 SCM</span>
+          <span class="fact-pill">Process Optimization</span>
+        </div>
+      </div>
       <div class="about-text fade-in">
-        <p>I spend my working hours turning complicated procurement problems — donor compliance, vendor risk, contract terms — into <strong>clean, defensible decisions</strong>. It's a discipline built on evidence, process, and the quiet work of making sure things are done right the first time.</p>
-        <p>Outside that, I've become preoccupied with a different kind of system: <strong>how children grow, and how the products and habits around them shape that growth</strong>. That curiosity became LittleGrow Parenting, a brand for Bengali-speaking parents, and it's now pulling me toward formal study in early childhood development and psychology.</p>
-        <p>My longer aim is to bring the two together — using what I know about procurement, markets, and consumer behavior to study how families actually choose what they buy for their children, and eventually to teach and write about it.</p>
-        <div class="credentials">
-          <div class="credential"><span class="yr">MBA</span><span class="what"><strong>Jagannath University</strong><span>Master of Business Administration</span></span></div>
-          <div class="credential"><span class="yr">BBA</span><span class="what"><strong>World University of Bangladesh</strong><span>Bachelor of Business Administration</span></span></div>
-          <div class="credential"><span class="yr">PGD</span><span class="what"><strong>ISCEA</strong><span>Post-Graduate Diploma in Supply Chain Management</span></span></div>
+        <p>I'm <strong>Yeasin Siddik</strong>, working as <strong>Assistant Officer – Procurement</strong> at icddr,b, one of Bangladesh's leading public-health research institutions. My day-to-day covers IT goods and services procurement, full contract lifecycle management for a portfolio of roughly <strong>150 active contracts</strong>, and compliance across major donor frameworks including USAID, GFATM, the Gates Foundation, GAC, UK FCDO, and Canada.</p>
+        <p>I also serve as the <strong>SPOC for the Microsoft Dynamics 365 SCM implementation</strong> at my organization — translating procurement workflows into digital, auditable processes. This work earned me an internal <strong>Procurement Officer of the Year</strong> recognition.</p>
+        <p>Alongside my career, I'm building <strong>LittleGrow Parenting</strong>, a Bengali-language brand for developmental toys and parenting books, and pursuing an <strong>MSc in Early Childhood Development</strong> — connecting my procurement and consumer-behavior background to how families actually choose products for their children.</p>
+        <div class="skill-grid">
+          <div class="skill-card">Procurement</div>
+          <div class="skill-card">Vendor Management</div>
+          <div class="skill-card">Strategic Sourcing</div>
+          <div class="skill-card">Contract Management</div>
+          <div class="skill-card">Tender Management</div>
+          <div class="skill-card">Inventory</div>
+          <div class="skill-card">D365 SCM</div>
+          <div class="skill-card">Power BI</div>
+          <div class="skill-card">Process Mapping</div>
+          <div class="skill-card">Excel</div>
+          <div class="skill-card">Business Analysis</div>
+          <div class="skill-card">Compliance (Multi-Donor)</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="clause alt" id="track-record">
-  <div class="clause-head">
-    <div class="clause-num">ART. II</div>
-    <div>
-      <div class="clause-title">Track Record</div>
-      <div class="clause-sub">Procurement &amp; supply chain management</div>
-    </div>
+<!-- EXPERIENCE -->
+<section id="experience" class="alt">
+  <div class="sec-head fade-in">
+    <div class="sec-eyebrow">Experience</div>
+    <div class="sec-title">Career timeline</div>
+    <p class="sec-sub">Milestones across 7+ years at icddr,b and 10+ years total in procurement &amp; supply chain.</p>
   </div>
-  <div class="clause-body">
-    <div class="stat-grid fade-in">
-      <div class="stat"><div class="num">~$2M</div><div class="lbl">Annual procurement<br>portfolio managed</div></div>
-      <div class="stat"><div class="num">150+</div><div class="lbl">Active contracts<br>administered</div></div>
-      <div class="stat"><div class="num">200+</div><div class="lbl">Tenders run<br>per year</div></div>
-      <div class="stat"><div class="num">$160K+</div><div class="lbl">Documented savings<br>across 3 IT contracts</div></div>
-    </div>
-
-    <div class="role-block fade-in">
-      <div class="role-meta">
-        <div class="org">icddr,b</div>
-        <div class="dur">Assistant Officer — Procurement (GS4)<br>Supply Chain Management Division<br>7+ years at the organization</div>
-      </div>
-      <div class="role-detail">
-        <p>Lead IT goods and services procurement and full contract lifecycle management for one of Bangladesh's largest health research institutions, maintaining compliance across major donor frameworks.</p>
-        <ul>
-          <li>Procured a $500K AI-assisted diagnostic X-ray system and a $400K food supply contract for institutional programs.</li>
-          <li>Manage general insurance coverage protecting approximately $70M in institutional assets.</li>
-          <li>Serve as single point of contact (SPOC) for the Microsoft Dynamics 365 SCM implementation.</li>
-          <li>Recognized internally as Procurement Officer of the Year.</li>
-        </ul>
-        <div class="tag-row">
-          <span class="tag">USAID</span><span class="tag">GFATM</span><span class="tag">Gates Foundation</span>
-          <span class="tag">GAC</span><span class="tag">UK FCDO</span><span class="tag">Canada</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="clause" id="academic">
-  <div class="clause-head">
-    <div class="clause-num">ART. III</div>
-    <div>
-      <div class="clause-title">Academic Path</div>
-      <div class="clause-sub">Toward child development &amp; psychology</div>
-    </div>
-  </div>
-  <div class="clause-body">
+  <div class="sec-body">
     <div class="timeline fade-in">
       <div class="tl-item">
-        <div class="tl-yr">Completed</div>
-        <div class="tl-title">MBA — Jagannath University</div>
-        <div class="tl-desc">Business foundation underpinning a decade of procurement and vendor management work.</div>
+        <div class="tl-yr">Current</div>
+        <div class="tl-title">Assistant Officer — Procurement (GS4)</div>
+        <div class="tl-org">icddr,b · Supply Chain Management Division</div>
+        <div class="tl-desc">Managing IT goods &amp; services procurement, ~150 active contracts, and ~200 tenders per year across a ~$2M annual portfolio, with compliance across multiple international donor frameworks.</div>
       </div>
       <div class="tl-item">
-        <div class="tl-yr">In progress</div>
-        <div class="tl-title">MSc, Early Childhood Development — BRAC Institute of Educational Development</div>
-        <div class="tl-desc">Selected for the ECD program at BRAC IED — the bridge credential connecting professional experience to formal child-development research.</div>
+        <div class="tl-yr">Ongoing</div>
+        <div class="tl-title">SPOC — Microsoft Dynamics 365 SCM Implementation</div>
+        <div class="tl-org">icddr,b</div>
+        <div class="tl-desc">Single point of contact translating procurement and contract workflows into the D365 SCM system.</div>
       </div>
-      <div class="tl-item future">
-        <div class="tl-yr">Planned</div>
-        <div class="tl-title">MPhil / PhD in Psychology — University of Dhaka</div>
-        <div class="tl-desc">Proposed thesis direction: parental consumer behavior in early-childhood product markets — combining MBA training, procurement expertise, and first-hand LittleGrow business data.</div>
+      <div class="tl-item">
+        <div class="tl-yr">Recognition</div>
+        <div class="tl-title">Procurement Officer of the Year</div>
+        <div class="tl-org">icddr,b — internal award</div>
+        <div class="tl-desc">Recognized for performance across contract management, vendor compliance, and process improvement.</div>
       </div>
-      <div class="tl-item future">
-        <div class="tl-yr">Long-term</div>
-        <div class="tl-title">Faculty life &amp; parenting seminars</div>
-        <div class="tl-desc">Teaching and public-facing seminars that bring research on child development to Bengali-speaking parents.</div>
+      <div class="tl-item">
+        <div class="tl-yr">7+ years ago</div>
+        <div class="tl-title">Joined icddr,b</div>
+        <div class="tl-org">Supply Chain Management Division</div>
+        <div class="tl-desc">Began a procurement career now spanning 10+ years of total professional experience.</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="clause alt" id="littlegrow">
-  <div class="clause-head">
-    <div class="clause-num">ART. IV</div>
-    <div>
-      <div class="clause-title">LittleGrow Parenting</div>
-      <div class="clause-sub">Founder &amp; operator</div>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-head fade-in">
+    <div class="sec-eyebrow">Projects</div>
+    <div class="sec-title">Selected work</div>
+    <p class="sec-sub">Procurement, digital transformation, and process-improvement initiatives.</p>
+  </div>
+  <div class="sec-body">
+    <div class="project-grid fade-in">
+      <div class="project-card">
+        <h4>D365 SCM Implementation — Procurement Module</h4>
+        <div class="flow">
+          <span class="flow-step">Manual procurement workflow</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">D365 SCM digitization</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step result">Faster, auditable processing</span>
+        </div>
+        <p class="pdesc">Served as SPOC for the D365 SCM rollout, moving procurement and contract workflows from manual, paper-based tracking into a structured digital system.</p>
+      </div>
+      <div class="project-card">
+        <h4>AI-Assisted Diagnostic Equipment Procurement</h4>
+        <div class="flow">
+          <span class="flow-step">Technical specification</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Vendor evaluation &amp; tender</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step result">$500K X-ray system delivered</span>
+        </div>
+        <p class="pdesc">Led procurement of an AI-assisted portable X-ray diagnostic system, including SLA and warranty-extension coordination with the equipment vendor.</p>
+      </div>
+      <div class="project-card">
+        <h4>Institutional Food Supply Contract</h4>
+        <div class="flow">
+          <span class="flow-step">Multi-vendor sourcing</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Contract negotiation</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step result">$400K contract secured</span>
+        </div>
+        <p class="pdesc">Managed sourcing and contracting for institutional food supply, balancing cost, quality, and donor compliance requirements.</p>
+      </div>
+      <div class="project-card">
+        <h4>General Insurance Procurement</h4>
+        <div class="flow">
+          <span class="flow-step">Asset risk review</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Policy structuring</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step result">$70M in assets covered</span>
+        </div>
+        <p class="pdesc">Led the procurement of general insurance coverage for institutional assets valued at approximately $70M.</p>
+      </div>
     </div>
   </div>
-  <div class="clause-body">
-    <div class="venture-panel fade-in">
-      <div>
-        <div class="v-kicker">লিটলগ্রো প্যারেন্টিং</div>
-        <h3>A Bengali-language home for early learning</h3>
-        <p>LittleGrow Parenting sells developmental wooden toys and parenting books for children ages 1–5 — stacking rings, shape sorters, sensory balls, chunky puzzles, nesting cups — alongside original Bengali content on child development and parenting psychology.</p>
-        <p>Built and run in evenings, weekends, and lunch breaks alongside a full-time procurement career.</p>
-        <a class="venture-cta" href="https://facebook.com/LittlegrowParenting" target="_blank" rel="noopener">Visit the Facebook page →</a>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="case-studies" class="alt">
+  <div class="sec-head fade-in">
+    <div class="sec-eyebrow">Case Studies</div>
+    <div class="sec-title">Full journeys, not just outcomes</div>
+    <p class="sec-sub">A closer look at how specific procurement challenges were worked through end to end.</p>
+  </div>
+  <div class="sec-body">
+    <div class="case-study fade-in">
+      <div class="case-tag">Compliance &amp; Contract Governance</div>
+      <h4>Responding to Internal Oversight on a Non-Renewed IT Contract</h4>
+      <div class="case-cols">
+        <div class="case-col">
+          <div class="cc-label">Challenge</div>
+          <p>An internal oversight review raised questions about the non-renewal of a hardware supplier contract, requiring a fully documented justification.</p>
+        </div>
+        <div class="case-col">
+          <div class="cc-label">Response</div>
+          <p>Drafted a formal, evidence-based response to the oversight team covering the procurement rationale, vendor performance history, and contract terms.</p>
+        </div>
+        <div class="case-col">
+          <div class="cc-label">Outcome</div>
+          <p>Provided a clean audit trail that satisfied internal governance requirements without disrupting ongoing IT operations.</p>
+        </div>
       </div>
-      <div class="venture-side">
-        <div class="v-stage">Rollout plan</div>
-        <div class="venture-stage-list">
-          <div class="v-stage-item"><span class="dot"></span><div><strong>Online store</strong>Facebook, Instagram &amp; Daraz, sourced via Nawabpur Road wholesale</div></div>
-          <div class="v-stage-item"><span class="dot"></span><div><strong>Content &amp; community</strong>Bengali parenting content across social and blog channels</div></div>
-          <div class="v-stage-item pending"><span class="dot"></span><div><strong>Offline shop</strong>Physical retail presence in Bangladesh</div></div>
+    </div>
+    <div class="case-study fade-in">
+      <div class="case-tag">Vendor &amp; Consulting Engagement</div>
+      <h4>Structuring a D365 F&amp;O Consulting Engagement</h4>
+      <div class="case-cols">
+        <div class="case-col">
+          <div class="cc-label">Challenge</div>
+          <p>The organization needed an external consulting partner for Dynamics 365 Finance &amp; Operations, requiring clear scope and legal protection.</p>
+        </div>
+        <div class="case-col">
+          <div class="cc-label">Response</div>
+          <p>Prepared a Professional Services Agreement and Notice of Intent defining deliverables, timelines, and obligations for the engagement.</p>
+        </div>
+        <div class="case-col">
+          <div class="cc-label">Outcome</div>
+          <p>A well-scoped agreement that protected institutional interests while enabling the consulting partner to begin work without ambiguity.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="clause" id="writing">
-  <div class="clause-head">
-    <div class="clause-num">ART. V</div>
-    <div>
-      <div class="clause-title">Writing</div>
-      <div class="clause-sub">Bengali long-form work</div>
-    </div>
+<!-- LITTLEGROW -->
+<section id="littlegrow">
+  <div class="sec-head fade-in">
+    <div class="sec-eyebrow">Founder</div>
+    <div class="sec-title">LittleGrow Parenting</div>
+    <p class="sec-sub">A Bengali-language brand for early childhood toys, books, and parenting content — started online, growing toward an offline shop.</p>
   </div>
-  <div class="clause-body">
-    <div class="book-grid fade-in">
-      <div class="book-card">
-        <div class="b-tag">Parenting book · ~150 pages</div>
-        <h4 class="bn">সন্তান বড় করার গল্প</h4>
-        <div class="b-en">A parenting book told through story</div>
-        <p>A full-length Bengali parenting book that teaches child development principles through narrative rather than lecture, anchored by three recurring fictional characters who carry the reader through common parenting situations.</p>
-        <div class="b-chars">Characters — Rayhan · Mehjabin · Ayat</div>
+  <div class="sec-body">
+    <div class="venture-card fade-in">
+      <div>
+        <div class="v-kicker">লিটলগ্রো প্যারেন্টিং</div>
+        <h3>Developmental toys &amp; parenting content for Bengali-speaking families</h3>
+        <p>LittleGrow sells wooden developmental toys — stacking rings, shape sorters, sensory balls, chunky puzzles, nesting cups — for children ages 1–5, sourced through Nawabpur Road wholesale in Dhaka, alongside original Bengali parenting content.</p>
+        <p>Started as an online-first business on Facebook and Instagram; the plan is to expand into offline retail in Bangladesh as the customer base grows.</p>
+        <a class="venture-btn" href="https://facebook.com/LittlegrowParenting" target="_blank" rel="noopener">Visit LittleGrow on Facebook →</a>
       </div>
-      <div class="book-card">
-        <div class="b-tag">Novel · In progress</div>
-        <h4 class="bn">যে মানুষটা কখনো কাঁদে নি</h4>
-        <div class="b-en">The Man Who Never Cried</div>
-        <p>A novel exploring emotional suppression and middle-class life in Bangladesh — the quiet cost of not being allowed to feel, and what it passes down through a family.</p>
+      <div class="v-list">
+        <div class="v-list-item"><span class="chk">✓</span><div><strong>Online store</strong><br>Facebook &amp; Instagram, expanding to Daraz</div></div>
+        <div class="v-list-item"><span class="chk">✓</span><div><strong>Content engine</strong><br>Bengali child-development content across social &amp; blog</div></div>
+        <div class="v-list-item"><span class="chk">○</span><div><strong>Offline shop</strong><br>Physical retail presence — next milestone</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<footer id="contact">
-  <div class="footer-inner">
-    <div class="footer-top fade-in">
-      <h2>Open to conversations on procurement, child development, or LittleGrow.</h2>
-      <div class="contact-list">
-        <a href="tel:+8801817180620">+880 1817-180620</a>
-        <a href="mailto:raselwub10@gmail.com">raselwub10@gmail.com</a>
-        <a href="https://facebook.com/LittlegrowParenting" target="_blank" rel="noopener">facebook.com/LittlegrowParenting</a>
+<!-- ARTICLES -->
+<section id="articles" class="alt">
+  <div class="sec-head fade-in">
+    <div class="sec-eyebrow">Articles</div>
+    <div class="sec-title">Writing</div>
+    <p class="sec-sub">Notes on procurement, D365, leadership, and parenting.</p>
+  </div>
+  <div class="sec-body">
+    <div class="article-filters fade-in">
+      <span class="filter-pill active">All</span>
+      <span class="filter-pill">Procurement</span>
+      <span class="filter-pill">D365 Tips</span>
+      <span class="filter-pill">Parenting</span>
+      <span class="filter-pill">Leadership</span>
+    </div>
+    <div class="article-grid fade-in">
+      <div class="article-card">
+        <div class="article-cat">Procurement</div>
+        <h5>Structuring a Tender Process Donors Won't Flag</h5>
+        <p>A practical walkthrough of building tender documentation that survives multi-donor audits.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-cat">D365 Tips</div>
+        <h5>What a Procurement SPOC Actually Does in a D365 Rollout</h5>
+        <p>Lessons from serving as the procurement-side single point of contact during implementation.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-cat">Leadership</div>
+        <h5>Making the Case for Non-Renewal — Without Losing Trust</h5>
+        <p>How to document a vendor decision so it holds up under internal review.</p>
+      </div>
+      <div class="article-card bn">
+        <div class="article-cat">Parenting</div>
+        <h5>সন্তান বড় করার গল্প</h5>
+        <p>~150 পাতার একটি বাংলা প্যারেন্টিং বই, রায়হান, মেহজাবিন ও আয়াত চরিত্রের গল্পের মধ্য দিয়ে বলা।</p>
+      </div>
+      <div class="article-card bn">
+        <div class="article-cat">Parenting</div>
+        <h5>যে মানুষটা কখনো কাঁদে নি</h5>
+        <p>মধ্যবিত্ত জীবনে আবেগ চেপে রাখা নিয়ে একটি উপন্যাস — লেখার কাজ চলছে।</p>
+      </div>
+      <div class="article-card">
+        <div class="article-cat">Procurement</div>
+        <h5>Vendor Evaluation Beyond the Lowest Bid</h5>
+        <p>A framework for scoring vendors on compliance, delivery risk, and total cost of ownership.</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div>Md. Easin Siddik — Dhaka, Bangladesh</div>
-      <div>Updated 2026</div>
+  </div>
+</section>
+
+<!-- RESOURCES / KNOWLEDGE HUB -->
+<section id="resources">
+  <div class="sec-head fade-in">
+    <div class="sec-eyebrow">Knowledge Hub</div>
+    <div class="sec-title">Resources</div>
+    <p class="sec-sub">Downloadable templates from real procurement practice — add your own files to activate these.</p>
+  </div>
+  <div class="sec-body">
+    <div class="resource-grid fade-in">
+      <div class="resource-card">
+        <div class="resource-icon">📄</div>
+        <h5>Procurement Templates</h5>
+        <p>Reusable base templates for common procurement documentation.</p>
+        <a class="resource-dl" href="#">Download →</a>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon">📋</div>
+        <h5>RFQ Sample</h5>
+        <p>A structured Request for Quotation format ready to adapt.</p>
+        <a class="resource-dl" href="#">Download →</a>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon">📑</div>
+        <h5>SOP Sample</h5>
+        <p>Standard Operating Procedure template for procurement workflows.</p>
+        <a class="resource-dl" href="#">Download →</a>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon">📊</div>
+        <h5>Vendor Evaluation Format</h5>
+        <p>Scoring sheet covering compliance, cost, and delivery risk.</p>
+        <a class="resource-dl" href="#">Download →</a>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon">📈</div>
+        <h5>Power BI Reports</h5>
+        <p>Sample procurement dashboards for spend and vendor analysis.</p>
+        <a class="resource-dl" href="#">Download →</a>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon">🧭</div>
+        <h5>D365 SCM Guides</h5>
+        <p>Short guides on procurement workflows inside Dynamics 365 SCM.</p>
+        <a class="resource-dl" href="#">Download →</a>
+      </div>
     </div>
   </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume" class="alt">
+  <div class="sec-head fade-in">
+    <div class="sec-eyebrow">Resume</div>
+    <div class="sec-title">One click away</div>
+  </div>
+  <div class="sec-body">
+    <div class="resume-panel fade-in">
+      <div>
+        <h3>Download the full resume</h3>
+        <p>A complete PDF covering procurement experience, D365 SCM work, achievements, and education.</p>
+      </div>
+      <a href="resume.pdf" download class="btn btn-primary" style="padding:14px 28px; font-size:15px;">Download Resume (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-head fade-in">
+    <div class="sec-eyebrow">Contact</div>
+    <div class="sec-title">Let's talk</div>
+    <p class="sec-sub">Open to conversations on procurement, D365, or LittleGrow.</p>
+  </div>
+  <div class="sec-body">
+    <div class="contact-grid fade-in">
+      <div class="contact-card">
+        <div class="ci">✉</div>
+        <div><div class="cl">Email</div><div class="cv"><a href="mailto:easinjnu16@gmail.com">easinjnu16@gmail.com</a></div></div>
+      </div>
+      <div class="contact-card">
+        <div class="ci">☎</div>
+        <div><div class="cl">Phone / WhatsApp</div><div class="cv"><a href="tel:+8801755628680">+880 1755-628680</a></div></div>
+      </div>
+      <div class="contact-card">
+        <div class="ci">in</div>
+        <div><div class="cl">LinkedIn</div><div class="cv"><a href="https://www.linkedin.com/in/easinrasel/" target="_blank" rel="noopener">LinkedIn Profile</a></div></div>
+      </div>
+      <div class="contact-card">
+        <div class="ci">f</div>
+        <div><div class="cl">Facebook — LittleGrow</div><div class="cv"><a href="https://facebook.com/LittlegrowParenting" target="_blank" rel="noopener">LittlegrowParenting</a></div></div>
+      </div>
+      <div class="contact-card">
+        <div class="ci">📍</div>
+        <div><div class="cl">Location</div><div class="cv">Dhaka, Bangladesh</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Yeasin Siddik · Designed &amp; built by <strong>Yeasin Siddik</strong>
 </footer>
 
 <script>
-  // Scroll-reveal
+  // Theme toggle with persistence
+  const root = document.documentElement;
+  const toggleBtn = document.getElementById('themeToggle');
+  const saved = localStorage.getItem('theme');
+  if(saved === 'dark'){ root.setAttribute('data-theme','dark'); toggleBtn.textContent = '☀️'; }
+  toggleBtn.addEventListener('click', ()=>{
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    if(isDark){ root.removeAttribute('data-theme'); localStorage.setItem('theme','light'); toggleBtn.textContent='🌙'; }
+    else{ root.setAttribute('data-theme','dark'); localStorage.setItem('theme','dark'); toggleBtn.textContent='☀️'; }
+  });
+
+  // Scroll reveal
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, {threshold:0.12});
+  }, {threshold:0.1});
   document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
 
   // Active nav highlight
   const navLinks = document.querySelectorAll('[data-nav]');
-  const sections = ['about','track-record','academic','littlegrow','writing','contact'].map(id=>document.getElementById(id));
+  const ids = ['home','about','experience','projects','case-studies','littlegrow','articles','resources','contact'];
+  const sections = ids.map(id=>document.getElementById(id)).filter(Boolean);
   const navObserver = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
@@ -465,8 +721,22 @@
       }
     });
   }, {rootMargin:'-40% 0px -50% 0px'});
-  sections.forEach(s=>{ if(s) navObserver.observe(s); });
+  sections.forEach(s=>navObserver.observe(s));
+
+  // Article filter (visual only, filters by category)
+  document.querySelectorAll('.filter-pill').forEach(pill=>{
+    pill.addEventListener('click', ()=>{
+      document.querySelectorAll('.filter-pill').forEach(p=>p.classList.remove('active'));
+      pill.classList.add('active');
+      const cat = pill.textContent.trim();
+      document.querySelectorAll('.article-card').forEach(card=>{
+        const cardCat = card.querySelector('.article-cat').textContent.trim();
+        card.style.display = (cat === 'All' || cardCat === cat) ? '' : 'none';
+      });
+    });
+  });
 </script>
 
 </body>
 </html>
+
